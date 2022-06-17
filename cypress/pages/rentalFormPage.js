@@ -27,13 +27,13 @@ class RentalFormPage {
   }
 
   // Not working for some reason
-  // getErrorMsg() {
-  //   return cy.get(".alert-danger");
-  // }
+  getErrorMsg() {
+    return cy.get(".alert-danger");
+  }
 
-  // getSubmitBtn() {
-  //   return cy.get(".btn-primary");
-  // }
+  getSubmitBtn() {
+    return cy.get(".btn-primary");
+  }
 }
 
 export default RentalFormPage;

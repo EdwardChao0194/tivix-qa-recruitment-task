@@ -114,58 +114,48 @@ describe("creating E2E testing around tivix webpage", () => {
     rentInfoPage.getRentBtn().click();
 
     const rentalFormPage = new RentalFormPage();
-    cy.get(".btn-primary").click();
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.missingUserInfoErr.missingFirstNameErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.missingUserInfoErr.missingLastNameErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.missingUserInfoErr.missingEmailErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.missingUserInfoErr.missingCardErr
-    );
+    rentalFormPage.getSubmitBtn().click();
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.missingUserInfoErr.missingFirstNameErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.missingUserInfoErr.missingLastNameErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.missingUserInfoErr.missingEmailErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.missingUserInfoErr.missingCardErr);
 
     //Verifying correct error statement for exceeding input length
     rentalFormPage.getName().type(testData.longUserInfo.longFirstName);
     rentalFormPage.getLastName().type(testData.longUserInfo.longLastName);
     rentalFormPage.getCardNumber().type(testData.longUserInfo.longCardNum);
     rentalFormPage.getEmail().type(testData.longUserInfo.longEmail);
-    cy.get(".btn-primary").click();
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.longUserInfoErr.longFirstNameErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.longUserInfoErr.longLastNameErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.longUserInfoErr.longCardNumErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.longUserInfoErr.longEmailErr
-    );
+    rentalFormPage.getSubmitBtn().click();
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.longUserInfoErr.longFirstNameErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.longUserInfoErr.longLastNameErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.longUserInfoErr.longCardNumErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.longUserInfoErr.longEmailErr);
 
     //Verifying correct error statement for invalid input
     rentalFormPage.getCardNumber().type(testData.invalidUserInfo.invalidCard);
     rentalFormPage.getEmail().type(testData.invalidUserInfo.invalidEmail);
-    cy.get(".btn-primary").click();
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.invalidUserInfoErr.invalidCardErr
-    );
-    cy.get(".alert-danger").should(
-      "include.text",
-      testData.invalidUserInfoErr.invalidEmailErr
-    );
+    rentalFormPage.getSubmitBtn().click();
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.invalidUserInfoErr.invalidCardErr);
+    rentalFormPage
+      .getErrorMsg()
+      .should("include.text", testData.invalidUserInfoErr.invalidEmailErr);
   });
 });
