@@ -1,0 +1,47 @@
+{
+  "searchPage":{
+    "countryName": ["France", "Germainy","Poland"],
+    "cityName": ["Berlin", "Cracow","Paris","Wroclaw"],
+    "modelName": ["Toyota Aygo", "Volkswagen Touran", "Suzuki SX4", "Mazda 3", "Suzuki Swift", "Mazda 6", "Skoda Octavia"],
+    "pickUpTime": "2022-06-16",
+    "dropOffTime":"2022-06-17"
+  },
+  "rentInfoPage":{
+    "companyName": "Company: Moore and Sons",
+    "pricePerDay": "Price per day: 42$",
+    "location": "Location: France, Paris",
+    "licensePlate": "License plate: 5-15597E"
+  },
+  "userInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "cardNumber": "1234567890123456",
+    "email": "email@company.com"
+  },
+  "missingUserInfoErr": {
+    "missingFirstNameErr": "Name is required",
+    "missingLastNameErr": "Last name is required",
+    "missingEmailErr": "Email is required",
+    "missingCardErr": "Card number is required"
+  },
+  "longUserInfo": {
+    "longFirstName": "abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdea",
+    "longLastName": "abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdea",
+    "longCardNum": "12345123451234512345123451",
+    "longEmail": "emailemailemailemailemailemailemailemailemail@email.com"
+  },
+  "longUserInfoErr":{
+    "longFirstNameErr": "Name value is too long",
+    "longLastNameErr": "Last name value is too long",
+    "longCardNumErr": "Card number value is too long",
+    "longEmailErr": "Email value is too long"
+  },
+  "invalidUserInfo":{
+    "invalidCard": "credit card number",
+    "invalidEmail": "email"
+  },
+  "invalidUserInfoErr":{
+    "invalidCardErr": "Card number contains wrong chars",
+    "invalidEmailErr": "Please provide valid email"
+  }
+}

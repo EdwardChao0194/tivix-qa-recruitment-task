@@ -1,0 +1,12 @@
+ui defects
+germany incorrect spelling
+error messages not specific/helpful (example: when drop off date is earlier than pick up date, error message is just “Please enter a valid date”)
+No validation on model field
+email has no domain validation (ex: .com, .ca) 
+
+
+functional defects:
+search results inaccurate - does not filter by selections
+city dropdown are not filtered based on country selection
+able to search for dates in the past
+404 on submit
